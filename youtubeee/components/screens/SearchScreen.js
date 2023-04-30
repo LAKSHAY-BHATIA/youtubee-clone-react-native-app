@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 import {useSelector,useDispatch} from 'react-redux';
 import {useTheme} from '@react-navigation/native';
 //https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=songs&type=video&key=[YOUR_API_KEY]
-//AIzaSyBlZCcCZbOAOyaNUld7tIw50PWx9IRmKyA
+
 
 
 const SearchScreen = ({navigation}) => {
@@ -21,7 +21,7 @@ const SearchScreen = ({navigation}) => {
   const dispatch = useDispatch()
   const fetchData=()=>{
     setLoading(true)
-          fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${value}&type=video&key=AIzaSyBlZCcCZbOAOyaNUld7tIw50PWx9IRmKyA`).then(res=>{
+          fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${value}&type=video&key=`).then(res=>{
             return res.json()
           }).then(data=> {
             console.log(data.items)
